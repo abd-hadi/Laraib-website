@@ -5,14 +5,15 @@ A responsive, elegant static beauty storefront designed for phones, tablets, and
 ## Open locally
 Double-click index.html, or serve the folder with any static web server. Google Fonts needs an internet connection; serif and sans-serif fallbacks work offline. All photographs are bundled in assets/.
 
-## Deploy on Vercel
+## Deploy on Netlify
 1. Extract the ZIP.
-2. Upload the contents of the starlight-cosmetics folder to a GitHub repository, with index.html at the repository root.
-3. Import that repository into Vercel as a new project.
-4. Use the Other framework preset. Leave the build command empty and use the project root as the output directory (.).
-5. Deploy.
+2. Drag the extracted starlight-cosmetics folder into Netlify’s manual deploy area.
+3. The folder contains index.html at its top level and needs no build step.
 
-Alternatively, from this folder use the official Vercel CLI and run `vercel` to follow its deployment prompts.
+For a Git-based deployment, use this folder as the base and publish directory, with no build command. The included netlify.toml sets the publish directory to the project root.
+
+## Appearance
+Use the moon/sun button in the header to switch light and dark modes. The choice is remembered on the same device. The lipstick-and-sparkle favicon matches the cosmetics theme.
 
 ## Edit your website
 - index.html: page copy, story, navigation, FAQs, and footer.

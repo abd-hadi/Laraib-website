@@ -15,3 +15,9 @@ document.querySelector('#newsletter').addEventListener('submit',e=>{e.preventDef
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
 document.querySelector('#year').textContent=new Date().getFullYear();renderProducts();renderBag();
 
+
+// Appearance preference is saved on this device.
+const themeToggle=document.querySelector('#theme-toggle');
+function updateThemeButton(){const dark=document.documentElement.dataset.theme==='dark';const label=dark?'Switch to light mode':'Switch to dark mode';themeToggle.setAttribute('aria-label',label);themeToggle.setAttribute('title',label);themeToggle.setAttribute('aria-pressed',String(dark));document.querySelector('meta[name="theme-color"]').setAttribute('content',dark?'#211b20':'#f8f4ee');}
+themeToggle.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('starlight-theme',theme)}catch{}updateThemeButton();});
+updateThemeButton();
